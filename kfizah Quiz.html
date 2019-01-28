@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KFIZAH QUIZ ON HTML</title>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<Link rel = "stylesheet" href = "style5.css">
+</head>
+<body>
+<div class="quiz">
+   <h1> please let do self revision on tody's lesson</h1>
+  <h2 class="quiz-question">what does HTML stands for?</h2>
+  <ul data-quiz-question="1">
+    <li class="quiz-answer" data-quiz-answer="a">a. How the maker last</li>
+    <li class="quiz-answer" data-quiz-answer="b">b. Hot text making language</li>
+    <li class="quiz-answer" data-quiz-answer="c">c. Hyper text markup lences</li>
+ <li class="quiz-answer" data-quiz-answer="d">d. Hyper Text Markup Language</li>
+  </ul>
+  
+  <h2 class="quiz-question">Q2: How many tags are in a regular element?"?</h2>
+  <ul data-quiz-question="2">
+    <li class="quiz-answer" data-quiz-answer="a">a. 1</li>
+    <li class="quiz-answer" data-quiz-answer="b">b. 2</li>
+    <li class="quiz-answer" data-quiz-answer="c">c. 3</li>
+    <li class="quiz-answer" data-quiz-answer="d">d. 4</li>
+  </ul>
+  
+  <h2 class="quiz-question">Q3: what is the difference in an opening tag and a closing tag"?</h2>
+  <ul data-quiz-question="3">
+    <li class="quiz-answer" data-quiz-answer="a">a.  Opening tag has a / in front</li>
+    <li class="quiz-answer" data-quiz-answer="b">b.  Closing tag has a / in front
+</li>
+    <li class="quiz-answer" data-quiz-answer="c">c. none is correct</li>
+    <li class="quiz-answer" data-quiz-answer="d">d. the clossing tag has ? sign</li>
+  </ul>
+  
+  <h2 class="quiz-question">Q4: <br/>What type of tag is this"?</h2>
+  <ul data-quiz-question="4">
+    <li class="quiz-answer" data-quiz-answer="a">a. close</li>
+    <li class="quiz-answer" data-quiz-answer="b">b. space tag</li>
+    <li class="quiz-answer" data-quiz-answer="c">c. break tag</li>
+    <li class="quiz-answer" data-quiz-answer="d">d. A broken one
+</li>
+  </ul>
+  
+  <h2 class="quiz-question">Q5:  where is the meta tag only found?"?</h2>
+  <ul data-quiz-question="5">
+    <li class="quiz-answer" data-quiz-answer="a">a. In the body</li>
+    <li class="quiz-answer" data-quiz-answer="b">b. in the last page</li>
+    <li class="quiz-answer" data-quiz-answer="c">c. The home page
+</li>
+    <li class="quiz-answer" data-quiz-answer="d">d.in the css</li>
+  </ul>
+  
+  <h2 class="quiz-question">Q6:  What is an element that does not having a closing tag called??</h2>
+  <ul data-quiz-question="6">
+    <li class="quiz-answer" data-quiz-answer="a">a. tag</li>
+    <li class="quiz-answer" data-quiz-answer="b">b. empty element</li>
+    <li class="quiz-answer" data-quiz-answer="c">c. span</li>
+    <li class="quiz-answer" data-quiz-answer="d">d. close element</li>
+  </ul>
+</div>
+
+<div class="quiz-result"></div>
+<script type="tvar Quiz = function(){
+  var self = this;
+  this.init = function(){
+    self._bindEvents();
+  }
+  
+  this.correctAnswers = [
+    { question: 1, answer: 'd' },
+    { question: 2, answer: 'b' },
+    { question: 3, answer: 'b' },
+    { question: 4, answer: 'c' },
+    { question: 5, answer: 'd' },
+    { question: 6, answer: 'b' },
+  ]
+  
+  this._pickAnswer = function($answer, $answers){
+    $answers.find('.quiz-answer').removeClass('active');
+    $answer.addClass('active');
+  }
+  this._calcResult = function(){
+    var numberOfCorrectAnswers = 0;
+    $('ul[data-quiz-question]').each(function(i){
+      var $this = $(this),
+          chosenAnswer = $this.find('.quiz-answer.active').data('quiz-answer'),
+          correctAnswer;
+      
+      for ( var j = 0; j < self.correctAnswers.length; j++ ) {
+        var a = self.correctAnswers[j];
+        if ( a.question == $this.data('quiz-question') ) {
+          correctAnswer = a.answer;
+        }
+      }
+      
+      if ( chosenAnswer == correctAnswer ) {
+        numberOfCorrectAnswers++;
+        
+        // highlight this as correct answer
+        $this.find('.quiz-answer.active').addClass('correct');
+      }
+      else {
+        $this.find('.quiz-answer[data-quiz-answer="'+correctAnswer+'"]').addClass('correct');
+        $this.find('.quiz-answer.active').addClass('incorrect');
+      }
+    });
+    if ( numberOfCorrectAnswers < 3 ) {
+      return {code: 'bad', text: 'Poor spelling skills'};
+    }
+    else if ( numberOfCorrectAnswers == 3 || numberOfCorrectAnswers == 4 ) {
+      return {code: 'mid', text: 'Moderate spelling skills'};
+    }
+    else if ( numberOfCorrectAnswers > 4 ) {
+      return {code: 'good', text: 'Good spelling skills'};
+    }
+  }
+  this._isComplete = function(){
+    var answersComplete = 0;
+    $('ul[data-quiz-question]').each(function(){
+      if ( $(this).find('.quiz-answer.active').length ) {
+        answersComplete++;
+      }
+    });
+    if ( answersComplete >= 6 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  this._showResult = function(result){
+    $('.quiz-result').addClass(result.code).html(result.text);
+  }
+  this._bindEvents = function(){
+    $('.quiz-answer').on('click', function(){
+      var $this = $(this),
+          $answers = $this.closest('ul[data-quiz-question]');
+      self._pickAnswer($this, $answers);
+      if ( self._isComplete() ) {
+        
+        // scroll to answer section
+        $('html, body').animate({
+          scrollTop: $('.quiz-result').offset().top
+        });
+        
+        self._showResult( self._calcResult() );
+        $('.quiz-answer').off('click');
+        
+      }
+    });
+  }
+}
+var quiz = new Quiz();
+quiz.init();ext/javascript">
+	
+</script>
+</body>
+</html>

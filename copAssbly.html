@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>THE CHURCH OF PENTECOST-ISRAEL</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Optional theme -->
+
+<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="stylechurch.css">
+</head>
+<style type="text/css">
+  .card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border-radius: 37px;
+  margin:5px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description h2{
+
+      padding-top: 10px;
+      text-align:center;
+      color: #c70039;
+      font-weight: bold;
+      font-size: 30px;
+
+
+  position:relative;
+  bottom: 32px;
+/*  left: 10px;
+*/}
+.card-description {
+    position: relative;
+    bottom: 3px;
+    left: 10px;
+    text-align: center;
+    padding-bottom: 5px;
+    width:80%;
+    height: 25%
+    border-radius:30px;
+}
+
+
+.card-description p {
+  padding-right: 10px;
+  font-size: 27px;
+  opacity: 0.7;
+  font-weight: bold;
+  bottom: 36px;
+  position: relative;
+  color:#c70039;
+  text-align: center;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+.card-link h2{
+      padding-right: 10px;
+
+    text-align: center;
+/*    padding-bottom:10px;
+*/}
+
+
+    background: #1d2cb7;
+}
+
+.vc_row .bt-vc-row-ovelay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card-description h2{
+  text-align: center;
+
+}
+.card-description p{
+    text-align: center;
+    padding-top: 10px;
+
+}
+body{
+  background-image: url('https://i.ytimg.com/vi/yJovjFxd8v0/maxresdefault.jpg');
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-attachment: fixed;
+}
+
+<!-- navbar dropdown css-->
+ul{
+  overflow:hidden;
+  list-style:none;
+  background-color:#5893d4;
+  border-bottom: 3px solid #0fa1e0;
+  width: 1200px;
+}
+ul li{
+  float:right;
+  padding: 15px 30px;
+  background-color: #e14594;
+/*  width: 1200px;
+*/  border-radius: 20px;
+   margin:5px auto;
+     overflow: hidden;
+
+}
+ul li:hover:after{
+  content:"";
+  position: absolute;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  border-bottom: 12px solid #0fa1e0;
+  margin-top:4px;
+  margin-left:7px;
+}
+ul li:hover{
+  background-color: #5893d4;
+  cursor: pointer
+}
+ul li a{
+  text-decoration:none;
+  color:#fff;
+}
+.dropdown-content{
+  display:none;
+  position:absolute;
+  min-width: 200px;
+  margin-top:17px;
+  background-color :#5893d4;
+  margin-left:-30px;
+}
+
+.dropdown-content a{
+  display:block;
+  padding: 14px 26px;
+}
+.dropdown-content a span{
+  margin-left:-10px;
+  margin-right: 10px;
+}
+.dropdown-content a:hover{
+  border-bottom: 1px dotted #fff;
+  border-top: 1px dotted #fff
+}
+.dropbtn:hover,.submenu:hover .dropdown-content{
+  display:block
+}
+.submenu li{
+  align-content: center;
+}
+/*#menuOverlay {
+   position:relative; /*or  absolute*/
+   bottom: -70px;
+   left:80;
+   width:100%:
+   height:60px;*/
+/*   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqh37i7nhwOYv6vKH0fTlf3iNquAD9Q_KedgzWsCf_O2TCC6I");
+/*/*/**/background-repeat:no-repeat;  
+*/*/*/ z-index: 999; /* or  greater value */
+
+}
+.card img{
+  border-radius: 10px;
+}
+#menuOverlay {
+  padding-top: 20%;
+   position:relative; /*or  absolute*/
+   bottom: -70px;
+   left:80;
+   width:100%:
+   height:70px;
+/*   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqh37i7nhwOYv6vKH0fTlf3iNquAD9Q_KedgzWsCf_O2TCC6I");
+/*/*/**/background-repeat:no-repeat;  
+*/*/*/ z-index: 999; /* or  greater value */
+
+}
+.card img{
+  border-radius: 10px;
+}
+#slidy-container{
+  border-radius: 90px;
+  border-bottom: 1px dotted #fff;
+  border-top: 1px dotted #fff
+}
+#slidy-container{
+  padding-bottom:15%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+#bethel-Ass p{
+/*s*//*  float: right;
+/*/*/**/ /*text-align:center;*/
+  font-weight: bold;
+  font-size: 30px;
+  padding-left: 37%;
+
+}
+}
+.row h5{
+  float: right;
+  font-weight: bold;
+}
+.column{
+    border: 2px solid black;
+    width: 70%;
+    text-align: center;
+}
+.column-pro{
+  width: 400px;
+  height: 310px;
+  float: left;
+  background-color: #41aaa8;
+    border-radius: 30px;
+
+}
+  .column-pro h5{
+    text-align:center;
+  }
+  .column-pro img{
+      padding-left: 27px;
+
+}
+.column-pro p{
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  top: 10px;
+}
+
+
+.column-daily{
+   width: 600px;
+  height: 250px;
+  float: right;
+  background-color: #41aaa8;
+  border-radius: 30px;
+
+}
+.column-daily p{
+      text-align:center;
+      font-size: 27px;
+      font-weight: bold;
+}
+.column-daily img{
+  padding-left: 30px;
+  width: 350px;
+}
+
+
+</style>
+<body >
+
+
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdni.rt.com/files/2017.12/article/5a2bb81afc7e93a03e8b4567.jpg');">
+  <img src="https://thecophq.org/wp-content/uploads/2018/05/COP-LOGO-2.jpg" width="70" height="70">
+  <div class="card-category" ></div>
+  <div class="card-description">
+    <h2>THE CHURCH OF PENTECOST-ISRAEL</h2>
+    <p>BRINGING THE WORLD TO THE SAVING KNOWLEDGE OF CHRIST</p>
+  </div>
+<!--   <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+<!--  -->  <a class="card-link" href="#" ></a>
+ </div>
+<!-- navbar dropdown-->
+
+
+
+<ul>
+  <li>
+    <a href="file:///home/emmanuel/Downloads/Emmanuel%20Asiama%20-%20skeleton/skeleton/copcntact.html">Contacts</a>
+  </li>
+  <li>
+<!--         <li class="submenu">
+ -->
+    <a href="#" class="dropbtn">Sermons</a>
+        <div class="dropdown-content">
+      <a href="#"><span>&raquo;</span>Audio-Sermons</a>
+      <a href="#"><span>&raquo;</span>Video-Sermons</a>
+    </div>
+
+
+
+  </li>
+  
+    <li class="submenu">
+    <a href="#" class="dropbtn">Ministries</a>
+    <div class="dropdown-content">
+      <a href="#"><span>&raquo;</span> witness ministry</a>
+      <a href="#"><span>&raquo;</span> Women's Ministry</a>
+      <a href="#"><span>&raquo;</span> Men's Ministry</a>
+       <a href="#"><span>&raquo;</span> Youth Ministry</a>
+      <a href="#"><span>&raquo;</span> Children's ministry</a>
+
+    </div>
+  
+  <li class="submenu">
+     <a href="#" class="dropbtn">Assemblies</a>
+     <div class="dropdown-content">
+     <a href="file:///home/emmanuel/Downloads/Emmanuel%20Asiama%20-%20skeleton/skeleton/copAssbly.html"><span>&raquo;</span> Bethel Ass</a>
+     <a href="file:///home/emmanuel/Downloads/Emmanuel%20Asiama%20-%20skeleton/skeleton/Coppiwc.html"><span>&raquo;</span> P.I.W.C</a>
+     <a href="#"><span>&raquo;</span> Red Sea Miracle</a>
+    </div>
+  <li class="submenu">
+    <a href="#" class="dropbtn">About us</a>
+         <div class="dropdown-content">
+          <a href="#" class="dropbtn">History</a>
+<!--      <div class="dropdown-content">
+ -->     <a href="#"><span>&raquo;</span>Tenant of th church</a>
+     <a href="#"><span>&raquo;</span>Our Mission</a>
+     <a href="#"><span>&raquo;</span>Our core Values</a>
+    </div>
+
+  </li>
+  <li>
+    <a href="#">Home</a>
+  </li>
+
+ <section>
+ 
+    <div id="bethel-Ass">
+            <p>BETHEL ASSEMBLY</p>
+    </div>
+
+
+   
+  <!--image slider-->
+  <div id="slidy-container">
+
+  <figure id="slidy">
+    <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/12096117_1074082905987915_725600248234838521_n.jpg?_nc_cat=106&_nc_ht=scontent.ftlv7-1.fna&oh=93a7b152ce54f9f8d58267775a1e0c37&oe=5CFA4B1B"height='450'>
+
+
+    <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/15085715_1268732323189638_548779692363099064_n.jpg?_nc_cat=102&_nc_ht=scontent.ftlv7-1.fna&oh=891fa7a2684f2119e3dd09f9a16ba8da&oe=5CF7A0B5"height="450" >
+<!--     <img src="https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-9/12096117_1074082905987915_725600248234838521_n.jpg?_nc_cat=106&_nc_ht=scontent.fsdv2-1.fna&oh=1243ef7258f2f2a6c83387067eb26b12&oe=5CAB311B" alt="lucie-2" >
+ -->    <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/14639666_1246929395369931_483189682313730371_n.jpg?_nc_cat=109&_nc_ht=scontent.ftlv7-1.fna&oh=8b863430303d37f7569e2d103fe7b707&oe=5CF76C55" alt="lucie" height="450">
+
+     <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/14068290_1186856778043860_650343735715446703_n.jpg?_nc_cat=104&_nc_ht=scontent.ftlv7-1.fna&oh=bc690ea25f31fba9fbebf46e9619f090&oe=5CC18A4B" height="450" ="lucie" >
+
+     <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/14064203_1186856624710542_4416577988620994543_n.jpg?_nc_cat=105&_nc_ht=scontent.ftlv7-1.fna&oh=0d77383d302fc323157cf702246520cf&oe=5CC4B458" height="450" >
+
+
+
+     <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/12800268_1081684788561060_3216335585938853212_n.jpg?_nc_cat=104&_nc_ht=scontent.ftlv7-1.fna&oh=fce1537956ed9838dbca5ae0201641bc&oe=5D0160DC" height="450" >
+     <img src="https://scontent.ftlv7-1.fna.fbcdn.net/v/t1.0-9/14141751_1186857854710419_8004958166596507145_n.jpg?_nc_cat=111&_nc_ht=scontent.ftlv7-1.fna&oh=d19a71f2b040497e8ba75539fa200fec&oe=5CB69742" height="450" >
+
+ </figure></br>
+</div>
+</section>
+  <div class="pro">
+    <p>LOCAL PROGRAMMS FOR FEBUARY</p>
+
+      <section>
+   <div class="column-pro" >
+<!--     <h6>GLOBAL MINISTERS CONFERENCE</h6>
+ -->    <img id="comp-iyoohzf6imgimage" style="object-position: 50% 50%; width: 400px; height: 210px; object-fit: cover;" alt="" data-type="image" src="">
+    <p>click to watch</p>
+<!--     <p><a href="https://www.youtube.com/watch?v=PAgP-eOa5_E">GLOBAL MINISTERS CONFERENCE  </a></p>
+ -->  </div>
+  <div class="column-daily">
+<!--     <h6>DAILY DEVOTION</h6>
+ -->        <img id="comp-iyoohzf6imgimage" style="object-position: 50% 50%; width:510px; height: 210px; object-fit: cover;" alt="" data-type="image" src="">
+
+    <p><!-- <a href="file:///home/emmanuel/Downloads/Emmanuel%20Asiama%20-%20skeleton/skeleton/copcntact.html -->">PRAYER REQUEST  </a></p>
+
+  </div> 
+  </section>
+    
+
+
+</div>
+
+
+  
+  <script type="text/javascript">
+  /* user defined variables */
+var timeOnSlide = 3,    
+    // the time each image will remain static on the screen, measured in seconds
+timeBetweenSlides = 1,  
+    // the time taken to transition between images, measured in seconds
+
+// test if the browser supports animation, and if it needs a vendor prefix to do so
+    animationstring = 'animation',
+    animation = false,
+    keyframeprefix = '',
+    domPrefixes = 'Webkit Moz O Khtml'.split(' '), 
+    // array of possible vendor prefixes
+    pfx  = '',
+    slidy = document.getElementById("slidy"); 
+if (slidy.style.animationName !== undefined) { animation = true; } 
+// browser supports keyframe animation w/o prefixes
+
+if( animation === false ) {
+  for( var i = 0; i < domPrefixes.length; i++ ) {
+    if( slidy.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+      pfx = domPrefixes[ i ];
+      animationstring = pfx + 'Animation';
+      keyframeprefix = '-' + pfx.toLowerCase() + '-';
+      animation = true;
+      break;
+    }
+  }
+}
+
+if( animation === false ) {
+  // animate in JavaScript fallback
+} else {
+  var images = slidy.getElementsByTagName("img"),
+      firstImg = images[0], 
+      // get the first image inside the "slidy" element.
+      imgWrap = firstImg.cloneNode(false);  // copy it.
+  slidy.appendChild(imgWrap); // add the clone to the end of the images
+  var imgCount = images.length, // count the number of images in the slide, including the new cloned element
+      totalTime = (timeOnSlide + timeBetweenSlides) * (imgCount - 1), // calculate the total length of the animation by multiplying the number of _actual_ images by the amount of time for both static display of each image and motion between them
+      slideRatio = (timeOnSlide / totalTime)*100, // determine the percentage of time an induvidual image is held static during the animation
+      moveRatio = (timeBetweenSlides / totalTime)*100, // determine the percentage of time for an individual movement
+      basePercentage = 100/imgCount, // work out how wide each image should be in the slidy, as a percentage.
+      position = 0, // set the initial position of the slidy element
+      css = document.createElement("style"); // start marking a new style sheet
+  css.type = "text/css";
+  css.innerHTML += "#slidy { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the slidy container
+  css.innerHTML += "#slidy img { float: left; width: " + basePercentage + "%; }\n";
+  css.innerHTML += "@"+keyframeprefix+"keyframes slidy {\n"; 
+  for (i=0;i<(imgCount-1); i++) { // 
+    position+= slideRatio; // make the keyframe the position of the image
+    css.innerHTML += position+"% { left: -"+(i * 100)+"%; }\n";
+    position += moveRatio; // make the postion for the _next_ slide
+    css.innerHTML += position+"% { left: -"+((i+1) * 100)+"%; }\n";
+}
+  css.innerHTML += "}\n";
+  css.innerHTML += "#slidy { left: 0%; "+keyframeprefix+"transform: translate3d(0,0,0); "+keyframeprefix+"animation: "+totalTime+"s slidy infinite; }\n"; // call on the completed keyframe animation sequence
+document.body.appendChild(css); // add the new stylesheet to the end of the document
+}
+
+</script>
+  
+</div>
+
+</body>
+</html>
